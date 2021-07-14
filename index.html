@@ -6,12 +6,12 @@
 </head>
 <body>
 <form name="Datos" method="POST" data-netlify="true" onsubmit="return validacion()">
-<p> Nombre: <input type="text" onkeypress="return soloLetras(event)" id="letter" name="nombre" size="40" maxlength="35"></p>
-<p> Año de nacimiento: <input type="number" id="year" name="nacido" min="1900" max="2023"></p>
-<p> Estatura: <input type="text" id="est"></p>
+<p> Nombre: <input type="text" onkeypress="return soloLetras(event)" id="letter" name="Nombre" size="40" maxlength="35"></p>
+<p> Año de nacimiento: <input type="number" id="year" name="Nacimiento" min="1900" max="2023"></p>
+<p> Estatura: <input type="text" name="Estatura" id="est"></p>
 <p> Sexo:
-       <input type="radio" name="hm" value="h"> Hombre
-       <input type="radio" name="hm" value="m"> Mujer
+       <input type="radio" name="Sexo" value="hombre"> Hombre
+       <input type="radio" name="Sexo" value="mujer"> Mujer
 </p>
 <p>
 <input type="submit" value="Enviar">
@@ -39,11 +39,11 @@ function validacion() {
         alert("Debes completar todos los campos");0
        }
 
-      hm = document.getElementsByName("hm");
+      Sexo = document.getElementsByName("Sexo");
 
           var seleccionado = false;
-          for(var i=0; i<hm.length; i++) {
-          if(hm[i].checked) {
+          for(var i=0; i<Sexo.length; i++) {
+          if(Sexo[i].checked) {
           seleccionado = true;
           break;
           }
