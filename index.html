@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title></title>
+<meta charset="utf-8">
+</head>
+<body>
+<form name="Datos" method="POST" data-netlify="true" onsubmit="return validacion()">
+<p> Nombre: <input type="text" onkeypress="return soloLetras(event)" id="letter" name="nombre" size="40" maxlength="35"></p>
+<p> Año de nacimiento: <input type="number" id="year" name="nacido" min="1900" max="2023"></p>
+<p> Estatura: <input type="text" id="est"></p>
+<p> Sexo:
+       <input type="radio" name="hm" value="h"> Hombre
+       <input type="radio" name="hm" value="m"> Mujer
+</p>
+<p>
+<input type="submit" value="Enviar">
+<input type="reset" value="Borrar">
+</p>
+</form>
+<script type="text/javascript">
+function validacion() {
+
+       var name= document.getElementById("letter").value;
+       if(/[0-9]/.test(name)){
+        alert("El campo nombre no debe contener numeros");
+        return false;
+       }
+       
+       var birthday = document.getElementById("year").value;
+
+       valor = document.getElementById("est").value;
+       if (isNaN(valor)) {
+        alert("El campo  estatura no debe contener letras");
+        return false;
+       }
+
+       if ( name==="" || birthday==="" || valor==="" ) {
+        alert("Debes completar todos los campos");0
+       }
+
+      hm = document.getElementsByName("hm");
+
+          var seleccionado = false;
+          for(var i=0; i<hm.length; i++) {
+          if(hm[i].checked) {
+          seleccionado = true;
+          break;
+          }
+         }
+
+         if(!seleccionado) {
+         alert("Seleccione un sexo");
+         return false;
+         }
+             
+}
+</script>
+</body>
+</html>
